@@ -1,65 +1,108 @@
 /* Podstawowe style strony */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
+    background: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
-/* Nagłówek */
+/* Nagłówek strony */
 #header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     background-color: #4CAF50;
     color: white;
-    text-align: center;
-    padding: 20px;
 }
 
-/* Główna część czatu */
-#chat-container {
-    width: 100%;
-    height: 60vh;
-    background-color: #fff;
+/* Logo w nagłówku */
+#logo img {
+    width: 40px;
+    height: auto;
+}
+
+/* Nazwa projektu, wyśrodkowana w nagłówku */
+#project-name {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.8em;
+}
+
+/* Formularz logowania */
+#login-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    margin: 20px auto;
-    padding: 20px;
-    overflow-y: auto;
-    border-radius: 8px;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
 }
 
-#chat-box {
-    max-height: 100%;
-    overflow-y: scroll;
+/* Pola formularza */
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
 }
 
-/* Formularz do wysyłania wiadomości */
-#message-form {
-    padding: 10px;
-    background-color: #fff;
-    border-top: 2px solid #f1f1f1;
-    border-radius: 8px;
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
 }
 
-#message-form input,
-#message-form textarea {
+.form-group input {
     width: 100%;
     padding: 10px;
-    margin: 5px 0;
-    border-radius: 4px;
-    border: 1px solid #ccc;
     font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
-#message-form button {
+/* Przycisk logowania */
+button {
+    width: 100%;
+    padding: 10px;
     background-color: #4CAF50;
     color: white;
-    padding: 10px;
     border: none;
-    border-radius: 4px;
+    border-radius: 5px;
+    font-size: 16px;
     cursor: pointer;
 }
 
-#message-form button:hover {
+button:hover {
     background-color: #45a049;
+}
+
+/* Link do rejestracji */
+#register-link {
+    margin-top: 10px;
+}
+
+#register-link p {
+    font-size: 14px;
+}
+
+#register-link a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+#register-link a:hover {
+    text-decoration: underline;
 }
 
 /* Stopka */
@@ -68,8 +111,6 @@ footer {
     color: white;
     text-align: center;
     padding: 10px;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
     font-size: 12px;
-}
+    position: fixed;
+    bottom
