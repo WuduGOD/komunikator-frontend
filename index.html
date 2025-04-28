@@ -3,32 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Komunikator</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Komunikator - Zaloguj się</title>
+    <link rel="stylesheet" href="style.css"> <!-- Wskazanie pliku CSS -->
 </head>
 <body>
-    <!-- Nagłówek -->
+
+    <!-- Nagłówek strony -->
     <header id="header">
-        <h1>Komunikator</h1>
+        <!-- Logo po lewej stronie -->
+        <div id="logo">
+            <img src="logo.png" alt="Logo projektu" id="logo-img">
+        </div>
+        <!-- Nazwa projektu na środku, ale na górze -->
+        <div id="project-name">
+            <h1>Komunikator</h1>
+        </div>
     </header>
 
-    <!-- Czat -->
-    <div id="chat-container">
-        <div id="chat-box"></div>
-    </div>
-
-    <!-- Formularz do wysyłania wiadomości -->
-    <div id="message-form">
-        <input type="text" id="user" placeholder="Twoje imię" required>
-        <textarea id="message" placeholder="Wpisz wiadomość..." required></textarea>
-        <button id="send-message">Wyślij</button>
-    </div>
+    <!-- Główna część strony z formularzem logowania -->
+    <main>
+        <div id="login-container">
+            <!-- Formularz logowania -->
+            <h2>Zaloguj się</h2>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="username">Nazwa użytkownika</label>
+                    <input type="text" id="username" name="username" placeholder="Wprowadź nazwę użytkownika" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Hasło</label>
+                    <input type="password" id="password" name="password" placeholder="Wprowadź hasło" required>
+                </div>
+                <button type="submit">Zaloguj się</button>
+            </form>
+            <!-- Link do rejestracji obok formularza logowania -->
+            <div id="register-link">
+                <p>Nie masz konta? <a href="#">Zarejestruj się</a></p>
+            </div>
+        </div>
+    </main>
 
     <!-- Stopka -->
     <footer>
-        <p>&copy; 2025 Komunikator | Stworzono przez [Twoje Imię]</p>
+        <p>Komunikator stworzony przez Ciebie. &copy; 2025</p>
     </footer>
 
-    <script src="app.js"></script>
+    <script src="app.js"></script> <!-- Wskazanie pliku JavaScript -->
 </body>
 </html>
