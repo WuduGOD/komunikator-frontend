@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Komunikator Inżynierski</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Witaj w komunikatorze!</h1>
+
+        <div id="login-section">
+            <button id="loginBtn">Zaloguj się przez Facebooka</button>
+        </div>
+
+        <div id="chat-section" style="display: none;">
+            <div id="messages"></div>
+            <input type="text" id="messageInput" placeholder="Wpisz wiadomość...">
+            <button id="sendBtn">Wyślij</button>
+        </div>
+    </div>
+
+    <!-- SDK Facebooka -->
+    <script async defer crossorigin="anonymous" 
+      src="https://connect.facebook.net/en_US/sdk.js"></script>
+    
+    <script src="app.js"></script>
+</body>
+</html>
