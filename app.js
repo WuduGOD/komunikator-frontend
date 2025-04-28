@@ -1,33 +1,27 @@
-// SDK Facebooka - Inicjalizacja
-window.fbAsyncInit = function() {
-    FB.init({
-      appId      : 'TWOJE_APP_ID',  // <<=== tu wpisz swój App ID Facebooka
-      cookie     : true,
-      xfbml      : true,
-      version    : 'v19.0'  // aktualna wersja API Facebooka
-    });
-};
+document.getElementById("send-message").addEventListener("click", function() {
+    const user = document.getElementById("user").value;
+    const message = document.getElementById("message").value;
 
-// Obsługa kliknięcia przycisku logowania
-document.getElementById('loginBtn').addEventListener('click', function() {
-    FB.login(function(response) {
-        if (response.authResponse) {
-            console.log('Zalogowano przez Facebooka!');
-            console.log('Token dostępu:', response.authResponse.accessToken);
+    if (!user || !message) {
+        alert("Proszę podać imię i wiadomość!");
+        return;
+    }
 
-            // Tutaj w przyszłości: wysyłamy token do backendu FastAPI
-            onLoginSuccess(response.authResponse.accessToken);
-
-        } else {
-            console.log('Logowanie anulowane.');
-        }
-    }, {scope: 'public_profile,email'});
+    // Dodaj wiadomość do chat-box
+    addMessageToChat(user, message);
+    
+    // Wyczyść formularz po wysłaniu
+    document.getElementById("message").value = '';
 });
 
-// Funkcja po udanym logowaniu
-function onLoginSuccess(accessToken) {
-    document.getElementById('login-section').style.display = 'none';
-    document.getElementById('chat-section').style.display = 'block';
+// Funkcja do dodawania wiadomości do czatu
+function addMessageToChat(user, message) {
+    const chatBox = document.getElementById("chat-box");
+    const newMessage = document.createElement("div");
+    newMessage.classList.add("message");
+    newMessage.innerHTML = `<strong>${user}:</strong> ${message}`;
+    chatBox.appendChild(newMessage);
 
-    // TODO: tutaj potem połączysz się z backendem FastAPI i WebSocketem
+    // Scrollowanie na dół po dodaniu wiadomości
+    chatBox.scrollTop = chatBox.scrollHeight;
 }
