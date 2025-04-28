@@ -1,9 +1,9 @@
-/* Podstawowe style strony */
+/* Ogólne style */
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background: #f0f0f0;
+    background-color: #fef6f6; /* Jaśniejszy, ciepły odcień tła */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -21,7 +21,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #4CAF50;
+    background-color: #ff4f58; /* Ciepły, czerwony odcień */
     color: white;
 }
 
@@ -33,6 +33,7 @@ body {
 
 /* Nazwa projektu, wyśrodkowana w nagłówku */
 #project-name {
+    color: black;
     position: absolute;
     top: 10px;
     left: 50%;
@@ -43,62 +44,74 @@ body {
 /* Formularz logowania */
 #login-container {
     background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 35px;
+    border-radius: 20px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1); /* Bardziej wyrazisty cień */
     width: 100%;
-    max-width: 400px;
+    max-width: 420px;
     text-align: center;
+}
+
+/* Tytuł formularza */
+#login-container h2 {
+    font-size: 26px;
+    margin-bottom: 20px;
+    color: #333;
 }
 
 /* Pola formularza */
 .form-group {
-    margin-bottom: 15px;
-    text-align: left;
-}
-
-.form-group label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
+    margin-bottom: 20px;
 }
 
 .form-group input {
     width: 100%;
-    padding: 10px;
+    padding: 16px;
     font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    border: 1px solid #ddd;
+    border-radius: 18px; /* Zmniejszone zaokrąglenie, by wyglądało bardziej elegancko */
+    background-color: #f8f8f8;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #ff4f58; /* Kolor czerwony, bardziej intensywny */
+    background-color: #fff;
 }
 
 /* Przycisk logowania */
 button {
     width: 100%;
-    padding: 10px;
-    background-color: #4CAF50;
+    padding: 16px;
+    background-color: #ff4f58; /* Czerwony przycisk */
     color: white;
     border: none;
-    border-radius: 5px;
-    font-size: 16px;
+    border-radius: 18px; /* Zaokrąglone rogi */
+    font-size: 18px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: #e04750; /* Ciemniejszy czerwony po najechaniu */
 }
 
 /* Link do rejestracji */
 #register-link {
-    margin-top: 10px;
+    margin-top: 15px;
 }
 
 #register-link p {
     font-size: 14px;
+    color: #333;
 }
 
 #register-link a {
-    color: #4CAF50;
+    color: #ff4f58; /* Czerwony odcień */
     text-decoration: none;
+    font-weight: bold;
 }
 
 #register-link a:hover {
@@ -113,4 +126,6 @@ footer {
     padding: 10px;
     font-size: 12px;
     position: fixed;
-    bottom: 0
+    bottom: 0;
+    width: 100%;
+}
