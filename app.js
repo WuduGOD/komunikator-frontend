@@ -14,6 +14,12 @@ document.getElementById("send-message").addEventListener("click", function() {
     document.getElementById("message").value = '';
 });
 
+const API_BASE = "https://komunikator-backend.onrender.com";  // podmień na rzeczywisty URL z Rendera
+
+// przykładowe użycie:
+fetch(`${API_BASE}/register`, { /* ... */ });
+
+
 // Funkcja do dodawania wiadomości do czatu
 function addMessageToChat(user, message) {
     const chatBox = document.getElementById("chat-box");
