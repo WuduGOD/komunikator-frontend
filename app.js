@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
           let msg = data.detail;
           if (Array.isArray(data.detail)) {
             msg = data.detail.map(item => item.msg || JSON.stringify(item)).join("\n");
-          } else if (typeof data.detail === 'object') {
+          } else if (typeof data.detail === "object") {
             msg = JSON.stringify(data.detail);
           }
           alert(msg || "Błąd logowania");
@@ -46,23 +46,24 @@ document.addEventListener("DOMContentLoaded", () => {
     registerForm.addEventListener("submit", async e => {
       e.preventDefault();
       const username = document.getElementById("reg-username").value.trim();
+      const email = document.getElementById("reg-email").value.trim();
       const password = document.getElementById("reg-password").value;
-      if (!username || !password) {
-        alert("Proszę podać nazwę użytkownika i hasło");
+      if (!username || !email || !password) {
+        alert("Proszę podać nazwę użytkownika, email i hasło");
         return;
       }
       try {
         const res = await fetch(`${API_BASE}/register`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ username, password })
+          body: JSON.stringify({ username, email, password })
         });
         const data = await res.json();
         if (!res.ok) {
           let msg = data.detail;
           if (Array.isArray(data.detail)) {
             msg = data.detail.map(item => item.msg || JSON.stringify(item)).join("\n");
-          } else if (typeof data.detail === 'object') {
+          } else if (typeof data.detail === "object") {
             msg = JSON.stringify(data.detail);
           }
           alert(msg || "Błąd rejestracji");
