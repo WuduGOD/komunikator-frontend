@@ -163,4 +163,23 @@ if (form) {
 
   // Naładowanie listy przy wejściu
   document.addEventListener("DOMContentLoaded", loadFriends);
-}
+  const showRegisterLink = document.getElementById("show-register");
+  const showLoginLink = document.getElementById("show-login");
+
+  if (showRegisterLink) {
+    showRegisterLink.addEventListener("click", function (e) {
+      e.preventDefault();
+      document.getElementById("login-container").style.display = "none";
+      document.getElementById("register-container").style.display = "block";
+    });
+  }
+
+  if (showLoginLink) {
+    showLoginLink.addEventListener("click", function (e) {
+      e.preventDefault();
+      document.getElementById("register-container").style.display = "none";
+      document.getElementById("login-container").style.display = "block";
+    });
+  }
+});
+
