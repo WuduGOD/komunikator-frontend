@@ -10,15 +10,12 @@
 
     <!-- Nagłówek strony -->
     <header id="header">
-        <!-- Logo po lewej stronie -->
         <div id="logo">
             <img src="images/logo.png" alt="Logo projektu" id="logo-img">
         </div>
-        <!-- Nazwa projektu na środku -->
         <div id="project-name">
             <h1>Komunikator</h1>
         </div>
-        <!-- Nawigacja -->
         <nav id="main-nav">
             <a href="index.html">Logowanie</a>
             <a href="friends.html">Znajomi</a>
@@ -26,8 +23,9 @@
         </nav>
     </header>
 
-    <!-- Główna część strony z formularzem logowania -->
+    <!-- Główna część strony -->
     <main>
+        <!-- Formularz logowania -->
         <div id="login-container">
             <h2>Zaloguj się</h2>
             <form id="login-form">
@@ -43,21 +41,25 @@
                 <p>Nie masz konta? <a href="#" id="show-register">Zarejestruj się</a></p>
             </div>
         </div>
-		<!-- Formularz rejestracji (domyślnie ukryty) -->
-		<div id="register-container" style="display: none;">
-			<h2>Zarejestruj się</h2>
-			<form id="register-form">
-				<div class="form-group">
-					<input type="text" id="reg-username" name="username" placeholder="Nazwa użytkownika" required>
-				</div>
-				<div class="form-group">
-					<input type="password" id="reg-password" name="password" placeholder="Hasło" required>
-				</div>
-			</form>
-		</div>
+
+        <!-- Formularz rejestracji -->
+        <div id="register-container" style="display: none;">
+            <h2>Zarejestruj się</h2>
+            <form id="register-form">
+                <div class="form-group">
+                    <input type="text" id="reg-username" name="username" placeholder="Nazwa użytkownika" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="reg-password" name="password" placeholder="Hasło" required>
+                </div>
+                <button type="submit">Zarejestruj się</button>
+            </form>
+            <div id="login-link">
+                <p>Masz już konto? <a href="#" id="show-login">Zaloguj się</a></p>
+            </div>
+        </div>
     </main>
 
-    <!-- Stopka -->
     <footer>
         <p>Komunikator stworzony przez Ciebie. &copy; 2025</p>
     </footer>

@@ -105,6 +105,15 @@ if (showRegisterLink) {
   });
 }
 
+const showLoginLink = document.getElementById("show-login");
+if (showLoginLink) {
+  showLoginLink.addEventListener("click", function (e) {
+    e.preventDefault();
+    document.getElementById("register-container").style.display = "none";
+    document.getElementById("login-container").style.display = "block";
+  });
+}
+
 // Funkcja dodająca znajomego
 async function addFriend(friendId) {
   const res = await fetch(`${API_BASE}/friends`, {
