@@ -21,12 +21,18 @@ document.addEventListener("DOMContentLoaded", () => {
         });
         const data = await res.json();
         if (!res.ok) {
-          alert(data.detail || "Błąd logowania");
+          let msg = data.detail;
+          if (Array.isArray(data.detail)) {
+            msg = data.detail.map(item => item.msg || JSON.stringify(item)).join("\n");
+          } else if (typeof data.detail === 'object') {
+            msg = JSON.stringify(data.detail);
+          }
+          alert(msg || "Błąd logowania");
           return;
         }
         localStorage.setItem("access_token", data.access_token);
         alert("Zalogowano pomyślnie!");
-        window.location.href = "friends.html";  // lub inny adres po zalogowaniu
+        window.location.href = "friends.html";
       } catch (err) {
         console.error(err);
         alert("Wystąpił błąd sieci przy logowaniu");
@@ -53,7 +59,13 @@ document.addEventListener("DOMContentLoaded", () => {
         });
         const data = await res.json();
         if (!res.ok) {
-          alert(data.detail || "Błąd rejestracji");
+          let msg = data.detail;
+          if (Array.isArray(data.detail)) {
+            msg = data.detail.map(item => item.msg || JSON.stringify(item)).join("\n");
+          } else if (typeof data.detail === 'object') {
+            msg = JSON.stringify(data.detail);
+          }
+          alert(msg || "Błąd rejestracji");
           return;
         }
         alert("Rejestracja zakończona sukcesem! Możesz się teraz zalogować.");
