@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Komunikator - Zaloguj się</title>
-    <link rel="stylesheet" href="style.css"> <!-- Wskazanie pliku CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -14,16 +14,21 @@
         <div id="logo">
             <img src="images/logo.png" alt="Logo projektu" id="logo-img">
         </div>
-        <!-- Nazwa projektu na środku, ale na górze -->
+        <!-- Nazwa projektu na środku -->
         <div id="project-name">
             <h1>Komunikator</h1>
         </div>
+        <!-- Nawigacja -->
+        <nav id="main-nav">
+            <a href="index.html">Logowanie</a>
+            <a href="friends.html">Znajomi</a>
+            <a href="chat.html">Czat</a>
+        </nav>
     </header>
 
     <!-- Główna część strony z formularzem logowania -->
     <main>
         <div id="login-container">
-            <!-- Formularz logowania -->
             <h2>Zaloguj się</h2>
             <form id="login-form">
                 <div class="form-group">
@@ -34,7 +39,6 @@
                 </div>
                 <button type="submit">Zaloguj się</button>
             </form>
-            <!-- Link do rejestracji obok formularza logowania -->
             <div id="register-link">
                 <p>Nie masz konta? <a href="#">Zarejestruj się</a></p>
             </div>
@@ -46,6 +50,6 @@
         <p>Komunikator stworzony przez Ciebie. &copy; 2025</p>
     </footer>
 
-    <script src="app.js"></script> <!-- Wskazanie pliku JavaScript -->
+    <script src="app.js"></script>
 </body>
 </html>

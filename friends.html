@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Komunikator – Znajomi</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header id="header">
+    <div id="logo">
+      <img src="images/logo.png" alt="Logo projektu" id="logo-img">
+    </div>
+    <div id="project-name">
+      <h1>Komunikator</h1>
+    </div>
+    <nav id="main-nav">
+      <a href="index.html">Logowanie</a>
+      <a href="friends.html">Znajomi</a>
+      <a href="chat.html">Czat</a> <!-- jeśli masz stronę czatu -->
+    </nav>
+  </header>
+
+  <main id="friends-container">
+    <h2>Twoi znajomi</h2>
+
+    <!-- Formularz dodawania nowego znajomego -->
+    <form id="add-friend-form" class="friends-form">
+      <input type="number" id="friend-id" placeholder="ID użytkownika" required>
+      <button type="submit">Dodaj znajomego</button>
+    </form>
+
+    <!-- Lista znajomych -->
+    <ul id="friends-list"></ul>
+  </main>
+
+  <footer>
+    <p>Komunikator stworzony przez Ciebie. &copy; 2025</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

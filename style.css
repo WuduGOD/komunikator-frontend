@@ -129,3 +129,20 @@ footer {
     bottom: 0;
     width: 100%;
 }
+
+/* Formularz dodawania znajomych */
+.friends-form {
+  margin: 1rem 0;
+  display: flex;
+  gap: 0.5rem;
+}
+
+#friends-list {
+  list-style: none;
+  padding: 0;
+}
+
+#friends-list li {
+  padding: 0.5rem;
+  border-bottom: 1px solid #ccc;
+}
