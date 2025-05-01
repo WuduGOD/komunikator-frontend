@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Komunikator - Rejestracja</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Nagłówek strony -->
+  <header id="header">
+    <div id="logo">
+      <img src="images/logo.png" alt="Logo projektu" id="logo-img">
+    </div>
+    <div id="project-name">
+      <h1>Komunikator</h1>
+    </div>
+    <nav id="main-nav">
+      <a href="index.html">Logowanie</a>
+      <a href="friends.html">Znajomi</a>
+      <a href="chat.html">Czat</a>
+    </nav>
+  </header>
+
+  <!-- Główna część strony: formularz rejestracji -->
+  <main>
+    <div id="register-container">
+      <h2>Zarejestruj się</h2>
+      <form id="register-form">
+        <div class="form-group">
+          <input type="text" id="reg-username" name="username" placeholder="Nazwa użytkownika" required>
+        </div>
+        <div class="form-group">
+          <input type="password" id="reg-password" name="password" placeholder="Hasło" required>
+        </div>
+        <button type="submit">Zarejestruj się</button>
+      </form>
+      <div id="login-link">
+        <p>Masz już konto? <a href="index.html" id="show-login">Zaloguj się</a></p>
+      </div>
+    </div>
+  </main>
+
+  <!-- Stopka -->
+  <footer>
+    <p>Komunikator stworzony przez Ciebie. &copy; 2025</p>
+  </footer>
+
+  <!-- Podpięcie skryptu z logiką -->
+  <script src="app.js"></script>
+</body>
+</html>
