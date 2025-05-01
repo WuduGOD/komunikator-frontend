@@ -40,9 +40,21 @@
                 <button type="submit">Zaloguj się</button>
             </form>
             <div id="register-link">
-                <p>Nie masz konta? <a href="#">Zarejestruj się</a></p>
+                <p>Nie masz konta? <a href="#" id="show-register">Zarejestruj się</a></p>
             </div>
         </div>
+		<!-- Formularz rejestracji (domyślnie ukryty) -->
+		<div id="register-container" style="display: none;">
+			<h2>Zarejestruj się</h2>
+			<form id="register-form">
+				<div class="form-group">
+					<input type="text" id="reg-username" name="username" placeholder="Nazwa użytkownika" required>
+				</div>
+				<div class="form-group">
+					<input type="password" id="reg-password" name="password" placeholder="Hasło" required>
+				</div>
+			</form>
+		</div>
     </main>
 
     <!-- Stopka -->

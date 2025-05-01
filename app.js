@@ -14,7 +14,8 @@ document.getElementById("send-message").addEventListener("click", function() {
     document.getElementById("message").value = '';
 });
 
-const API_BASE = "https://komunikator-backend.onrender.com";  // podmień na rzeczywisty URL z Rendera
+const API_BASE = "https://komunikator-backend.onrender.com"; // Twój backend
+const token = localStorage.getItem("access_token");
 
 // przykładowe użycie:
 fetch(`${API_BASE}/register`, { /* ... */ });
@@ -32,11 +33,77 @@ function addMessageToChat(user, message) {
     chatBox.scrollTop = chatBox.scrollHeight;
 }
 
-// Upewnij się, że masz gdzie trzymać token, np. po zalogowaniu:
-// localStorage.setItem("access_token", token);
+// Obsługa rejestracji
+const registerForm = document.getElementById("register-form");
+if (registerForm) {
+  registerForm.addEventListener("submit", async function (e) {
+    e.preventDefault();
 
-const API_BASE = "https://komunikator-backend.onrender.com"; // Twój backend
-const token = localStorage.getItem("access_token");
+    const username = document.getElementById("reg-username").value;
+    const password = document.getElementById("reg-password").value;
+
+    try {
+      const res = await fetch(`${API_BASE}/register`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ username, password }),
+      });
+
+      if (res.ok) {
+        alert("Rejestracja zakończona sukcesem. Możesz się teraz zalogować.");
+        // opcjonalnie: automatyczne przełączenie na formularz logowania
+        document.getElementById("register-container").style.display = "none";
+        document.getElementById("login-container").style.display = "block";
+      } else {
+        const data = await res.json();
+        alert(data.detail || "Błąd rejestracji");
+      }
+    } catch (err) {
+      console.error(err);
+      alert("Wystąpił błąd sieci");
+    }
+  });
+}
+
+// Obsługa logowania
+const loginForm = document.getElementById("login-form");
+if (loginForm) {
+  loginForm.addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
+
+    try {
+      const res = await fetch(`${API_BASE}/login`, {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams({ username, password })
+      });
+
+      const data = await res.json();
+
+      if (res.ok && data.access_token) {
+        localStorage.setItem("access_token", data.access_token);
+        window.location.href = "friends.html"; // lub inna strona po zalogowaniu
+      } else {
+        alert(data.detail || "Nieprawidłowe dane logowania");
+      }
+    } catch (err) {
+      console.error(err);
+      alert("Wystąpił błąd logowania");
+    }
+  });
+}
+
+const showRegisterLink = document.getElementById("show-register");
+if (showRegisterLink) {
+  showRegisterLink.addEventListener("click", function (e) {
+    e.preventDefault();
+    document.getElementById("login-container").style.display = "none";
+    document.getElementById("register-container").style.display = "block";
+  });
+}
 
 // Funkcja dodająca znajomego
 async function addFriend(friendId) {
